@@ -16,3 +16,10 @@ pip install gitpython
 ```viml
 Plug 'tacogips/jump_to_github.nvim', { 'do': ':UpdateRemotePlugins' }
 ```
+
+## usage
+
+```
+:JumpToGithub
+```
+
