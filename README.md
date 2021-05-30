@@ -19,6 +19,7 @@ Plug 'tacogips/jump_to_github.nvim', { 'do': ':UpdateRemotePlugins' }
 
 ## usage
 
+open a file in git repository and  run,
 ```
 :JumpToGithub
 ```
