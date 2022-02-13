@@ -6,7 +6,7 @@ with packer
 ```lua
 use({
   "tacogips/jump_to_github.nvim",
-
+    requires = { { "nvim-lua/plenary.nvim" } },
     config = function()
       require("jump_to_github").setup({})
     end,
