@@ -10,7 +10,7 @@ local config = {
 	add_command = true,
 }
 
-function M.setup(opt)
+function M.setup(user_options)
 	config = vim.tbl_deep_extend("force", config, user_options)
 
 	browser.config.open_cmd = config.open_browser
