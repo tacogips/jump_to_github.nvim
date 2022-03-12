@@ -5,12 +5,18 @@ local git = require("jump_to_github.git")
 local buffer = require("jump_to_github.buffer")
 local browser = require("jump_to_github.browser")
 
-function M.setup(opt)
-	browser.config.open_cmd = opt.open_cmd or "brave"
+local config = {
+	open_browser = "brave",
+	add_command = true,
+}
 
-	cmd(
-		[[command! -range JumpToGithub :<line1>,<line2>lua require("jump_to_github").jump_current_lines(<line1>,<line2>)]]
-	)
+function M.setup(opt)
+	config = vim.tbl_deep_extend("force", config, user_options)
+
+	browser.config.open_cmd = config.open_browser
+	if config.add_command then
+		cmd([[command! -range JumpToGithub :lua require("jump_to_github").jump_current_lines(<line1>,<line2>)]])
+	end
 end
 
 function M.jump_current_lines(range_start_row, range_end_row)
