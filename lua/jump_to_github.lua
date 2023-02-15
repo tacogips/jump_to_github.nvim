@@ -6,7 +6,7 @@ local buffer = require("jump_to_github.buffer")
 local browser = require("jump_to_github.browser")
 
 local config = {
-	open_browser = "/use/bin/firefox",
+	open_browser = "/usr/bin/firefox",
 	add_command = true,
 }
 
